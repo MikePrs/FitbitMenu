@@ -1,0 +1,37 @@
+{
+  "fitbit": {
+    "appUUID": "8e219771-7d3c-442c-916f-610b01f9bcde",
+    "appType": "app",
+    "appDisplayName": "App Example",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#cddc39",
+    "requestedPermissions": [
+      "access_heart_rate",
+      "access_activity",
+      "access_user_profile",
+      "access_location",
+      "access_internet",
+      "run_background",
+      "access_exercise"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson"
+    ],
+    "i18n": {
+      "en": {
+        "name": "App Example"
+      }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "^3.1.3"
+  },
+  "dependencies": {
+    "@fitbit/sdk-cli": "^1.7.1"
+  },
+  "scripts": {
+    "build": "fitbit-build"
+  }
+}
