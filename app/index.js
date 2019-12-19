@@ -12,47 +12,22 @@ items.forEach((element, index) => {
   let touch = element.getElementById("touch-me");
   touch.onclick = (evt) => {
     console.log(`touched: ${index}`);
-    if (index == 0) {
+    if (index == 3) {
             showHeartRate(element);
         } 
         // If the second item is clicked
-        else if (index == 1) {
-            showImage(element);
+        else if (index == 4) {
+            showFloorsCount(element);
         } 
         // If the third item is clicked
-        else {
+        else if (index == 1) {
             showStepsCount(element);
         }
   }
 });
 /////////////////////////////////////////////////
-let scrollview = document.getElementById("scrollview");
-let items = scrollview.getElementsByClassName("item");
 
-// For every item in the scrollview
-// add an eventListener to its rect
-items.forEach((element, index) => {
-    let touch = element.getElementById("section" + (index + 1));
-    touch.addEventListener('click', () => {
-        // If the first item is clicked
-        if (index == 0) {
-            showHeartRate(element);
-        } 
-        // If the second item is clicked
-        else if (index == 1) {
-            showImage(element);
-        } 
-        // If the third item is clicked
-        else {
-            showStepsCount(element);
-        }
-    });
-});
 
-// function showHeartRate
-// Hides the current text in section 1
-// and displays another text with the heart rate
-// Parameter: Object element
 function showHeartRate(element) {
     if (appbit.permissions.granted("access_heart_rate")) {
         if (HeartRateSensor) {
@@ -60,10 +35,9 @@ function showHeartRate(element) {
             const hrm = new HeartRateSensor();
             // Declare an event handler that will be called every time a new HR value is received.
             hrm.addEventListener("reading", function () {
-                let title = element.getElementById("title");
+                let title = element.getElementById("tile-list-item");
                 let HRMtext = element.getElementById("HRMtext");
                 HRMtext.style.display = "inline";
-                title.style.display = "none";
                 HRMtext.text = "Heart Rate:" + hrm.heartRate;
                 console.log("Current heart rate: " + hrm.heartRate);
             });
@@ -73,17 +47,7 @@ function showHeartRate(element) {
     }
 }
 
-// function showImage
-// Hides the current rect in section 2
-// and displays an image behind the text
-// Parameter: Object element
-function showImage(element) {
-    let img = element.getElementById("img");
-    let rect2 = element.getElementById("section2");
-    img.style.display = "inline";
-    rect2.style.display = "none";
-    console.log("Image Placed!");
-}
+
 
 // function showStepsCount
 // Changes the rect fill color in section3
@@ -92,10 +56,13 @@ function showImage(element) {
 // Parameter: Object element
 function showStepsCount(element) {
     if (appbit.permissions.granted("access_activity")) {
-        let rect3 = element.getElementById("section3");
+        let rect3 = element.getElementById("tile-list-item");
         let steps = element.getElementById("steps");
-        rect3.style.fill = "blue";
         steps.text = today.adjusted.steps + " steps";
         console.log(`${today.adjusted.steps} Steps`);
     }
+}
+
+function showFloorsCount(element) {
+    
 }

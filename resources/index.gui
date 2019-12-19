@@ -13,6 +13,7 @@
   
   <use id="my-list" href="#tile-list">
     <var id="separator-height-bottom" value="2" />
+    
     <use href="#my-tile-item" class="tile-list-item">
       <set href="text" attributeName="text-buffer" to="Profile" />
             
@@ -21,15 +22,20 @@
     
     <use href="#my-tile-item" class="tile-list-item" >
       <set href="text" attributeName="text-buffer" to="Steps" />
+      <text id="steps" x="50%" y="50%+10" fill="white" font-size="30" text-length="64" font-weight="bold"></text>
     </use>
     <use href="#my-tile-item" class="tile-list-item">
       <set href="text" attributeName="text-buffer" to="Calories" />
     </use>
     <use href="#my-tile-item" class="tile-list-item">
       <set href="text" attributeName="text-buffer" to="Heart Rate" />
+      <text id="HRMtext" x="50%" y="50%+10" font-size="24" text-length="64" font-weight="bold" display="none">nhk</text>
+      
     </use>
+    
     <use href="#my-tile-item" class="tile-list-item">
       <set href="text" attributeName="text-buffer" to="Floors" />
+      <text id="floors" x="50%" y="50%+10" fill="white" font-size="30" text-length="64" font-weight="bold"></text>
     </use>
   </use>
   

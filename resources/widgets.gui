@@ -9,6 +9,9 @@
     <link rel="import" href="/mnt/sysassets/widgets/scrollview_widget.gui" />
     
     <link rel="import" href="/mnt/sysassets/widgets/tile_list_widget.gui" />
+    
+    <link rel="import" href="/mnt/sysassets/widgets/cycleview_widget.gui" />
+
 <!-- //////////////////////////////////////////////////////////////////////////-->
 
   </defs>
