@@ -12,16 +12,19 @@ items.forEach((element, index) => {
   let touch = element.getElementById("touch-me");
   touch.onclick = (evt) => {
     console.log(`touched: ${index}`);
-    if (index == 3) {
+        if (index == 3) {
             showHeartRate(element);
         } 
         // If the second item is clicked
-        else if (index == 4) {
+        if (index == 4) {
             showFloorsCount(element);
         } 
         // If the third item is clicked
-        else if (index == 1) {
+        if (index == 1) {
             showStepsCount(element);
+        }
+        if (index == 0) {   /// call the profile 
+            showProfile(element);
         }
   }
 });
@@ -65,4 +68,22 @@ function showStepsCount(element) {
 
 function showFloorsCount(element) {
     
+}
+
+function showProfile(element) {
+    let prof = document.getElementById("profile");
+    let list = document.getElementById("my-list");
+    let svgButt = document.getElementById("button");
+    list.style.display = "none"; // close scroll view 
+    prof.style.display = "inline"; // open rect
+    svgButt.style.display = "inline";// open button 
+  //  console.log("Profile");
+    
+    svgButt.onactivate = function(evt) { // after click 
+      console.log("back CLICKED!");
+      list.style.display = "inline"; // open scroll view 
+      prof.style.display = "none"; // close rect
+      svgButt.style.display = "none"; // close button 
+    }
+
 }
